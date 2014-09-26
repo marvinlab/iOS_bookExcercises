@@ -19,6 +19,8 @@
 		FAA3202419D55DA500E7D01C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA3200C19D55DA500E7D01C /* UIKit.framework */; };
 		FAA3202C19D55DA500E7D01C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAA3202A19D55DA500E7D01C /* InfoPlist.strings */; };
 		FAA3202E19D55DA500E7D01C /* QuizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3202D19D55DA500E7D01C /* QuizTests.m */; };
+		FAA3203A19D55EBA00E7D01C /* BNRQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3203819D55EBA00E7D01C /* BNRQuizViewController.m */; };
+		FAA3203B19D55EBA00E7D01C /* BNRQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA3203919D55EBA00E7D01C /* BNRQuizViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		FAA3202919D55DA500E7D01C /* QuizTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuizTests-Info.plist"; sourceTree = "<group>"; };
 		FAA3202B19D55DA500E7D01C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAA3202D19D55DA500E7D01C /* QuizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizTests.m; sourceTree = "<group>"; };
+		FAA3203719D55EBA00E7D01C /* BNRQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRQuizViewController.h; sourceTree = "<group>"; };
+		FAA3203819D55EBA00E7D01C /* BNRQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRQuizViewController.m; sourceTree = "<group>"; };
+		FAA3203919D55EBA00E7D01C /* BNRQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRQuizViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,9 @@
 			children = (
 				FAA3201719D55DA500E7D01C /* BNRAppDelegate.h */,
 				FAA3201819D55DA500E7D01C /* BNRAppDelegate.m */,
+				FAA3203719D55EBA00E7D01C /* BNRQuizViewController.h */,
+				FAA3203819D55EBA00E7D01C /* BNRQuizViewController.m */,
+				FAA3203919D55EBA00E7D01C /* BNRQuizViewController.xib */,
 				FAA3201A19D55DA500E7D01C /* Images.xcassets */,
 				FAA3200F19D55DA500E7D01C /* Supporting Files */,
 			);
@@ -221,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA3201319D55DA500E7D01C /* InfoPlist.strings in Resources */,
+				FAA3203B19D55EBA00E7D01C /* BNRQuizViewController.xib in Resources */,
 				FAA3201B19D55DA500E7D01C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +251,7 @@
 			files = (
 				FAA3201519D55DA500E7D01C /* main.m in Sources */,
 				FAA3201919D55DA500E7D01C /* BNRAppDelegate.m in Sources */,
+				FAA3203A19D55EBA00E7D01C /* BNRQuizViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
