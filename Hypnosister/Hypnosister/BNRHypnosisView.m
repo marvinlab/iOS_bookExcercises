@@ -10,12 +10,38 @@
 
 @implementation BNRHypnosisView
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@ was touched",self);
+    
+    float red = (arc4random()%100)/100.0;
+    float green = (arc4random()%100)/100.0;
+    float blue = (arc4random()%100)/100.0;
+    
+    UIColor *randomColor = [UIColor colorWithRed:red
+                                           green:green
+                                            blue:blue
+                                           alpha:1.0];
+    
+    self.circleColor = randomColor;
+    
+}
+
+-(void)setCircleColor:(UIColor *)circleColor
+{
+    
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
+    
+}
+
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
+        self.circleColor = [UIColor lightGrayColor];
         self.backgroundColor = [UIColor clearColor];
     }
     return self;
@@ -30,7 +56,7 @@
     
     
     
-    UIImage *logoImage = [UIImage imageNamed:@"cyscorpions-logo.png"];
+    //UIImage *logoImage = [UIImage imageNamed:@"cyscorpions-logo.png"];
     
     CGPoint center;
     
@@ -38,7 +64,7 @@
     center.x = bounds.origin.x + bounds.size.width / 2.0;
     center.y = bounds.origin.y + bounds.size.height / 2.0;
     
-    CGRect picture = CGRectMake(0,150, bounds.size.width, 200);
+    //CGRect picture = CGRectMake(0,150, bounds.size.width, 200);
     
     float maxRadius = hypot(bounds.size.width, bounds.size.height) / 2.0;
     
@@ -63,11 +89,11 @@
     
     path.lineWidth = 10.0;
     
-    [[UIColor lightGrayColor]setStroke];
+    [self.circleColor setStroke];
     
     [path stroke];
     
-    [logoImage drawInRect:picture];
+   // [logoImage drawInRect:picture];
    
 }
 
