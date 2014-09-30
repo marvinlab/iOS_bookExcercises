@@ -17,13 +17,18 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    __unused BNRHypnosisViewController *hvc = [[BNRHypnosisViewController alloc]init];
+    BNRHypnosisViewController *hvc = [[BNRHypnosisViewController alloc]init];
     
     __unused NSBundle *appBundle = [NSBundle mainBundle];
     
     BNRReminderViewController *rvc = [[BNRReminderViewController alloc]init];
     
-    self.window.rootViewController = rvc;
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+    tabBarController.viewControllers = @[hvc,rvc];
+    
+    
+    
+    self.window.rootViewController = tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
