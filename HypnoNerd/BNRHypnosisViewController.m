@@ -87,13 +87,11 @@
             
             [messageLabel addMotionEffect:motionEffectHoriz];
             
-            
-           
-            
-            
-            
         }
     }
+
+
+
 
     -(BOOL)textFieldShouldReturn:(UITextField *)textField
     {
@@ -105,6 +103,10 @@
     
         return YES;
     }
+
+
+
+
 
     -(instancetype)initWithNibName:(NSString *)nibNameOrNil
                             bundle:(NSBundle *)nibBundleOrNil
@@ -121,6 +123,9 @@
     return self;
     
     }
+
+
+
 
     -(void)viewDidLoad
     {
