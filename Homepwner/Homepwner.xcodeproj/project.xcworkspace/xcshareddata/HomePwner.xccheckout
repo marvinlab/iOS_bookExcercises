@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>67B5D573-C999-406D-A06D-7F4C57C1A41E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HomePwner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EA70A11A-3F68-4B77-BEC2-C60B61F7EC14</key>
+		<string>https://github.com/marvinlab/iOS_bookExcercises.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HomePwner/HomePwner.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EA70A11A-3F68-4B77-BEC2-C60B61F7EC14</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/marvinlab/iOS_bookExcercises.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EA70A11A-3F68-4B77-BEC2-C60B61F7EC14</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EA70A11A-3F68-4B77-BEC2-C60B61F7EC14</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS_bookExercises</string>
+		</dict>
+	</array>
+</dict>
+</plist>

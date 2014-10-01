@@ -22,6 +22,7 @@
 		520AA4AF187C4EF00048F174 /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4AE187C4EF00048F174 /* BNRItemsViewController.m */; };
 		520AA4B2187C4F910048F174 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4B1187C4F910048F174 /* BNRItem.m */; };
 		520AA4B5187C4FC00048F174 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4B4187C4FC00048F174 /* BNRItemStore.m */; };
+		FA57726019DBA05E00E786DF /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA57725F19DBA05E00E786DF /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		520AA4B1187C4F910048F174 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		520AA4B3187C4FC00048F174 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		520AA4B4187C4FC00048F174 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		FA57725F19DBA05E00E786DF /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				520AA4B4187C4FC00048F174 /* BNRItemStore.m */,
 				520AA4AD187C4EF00048F174 /* BNRItemsViewController.h */,
 				520AA4AE187C4EF00048F174 /* BNRItemsViewController.m */,
+				FA57725F19DBA05E00E786DF /* HeaderView.xib */,
 				520AA490187C4EC00048F174 /* Images.xcassets */,
 				520AA485187C4EC00048F174 /* Supporting Files */,
 			);
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA57726019DBA05E00E786DF /* HeaderView.xib in Resources */,
 				520AA489187C4EC00048F174 /* InfoPlist.strings in Resources */,
 				520AA491187C4EC00048F174 /* Images.xcassets in Resources */,
 			);
@@ -380,10 +384,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CYSCORPIONS INC";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HomePwner/HomePwner-Prefix.pch";
 				INFOPLIST_FILE = "HomePwner/HomePwner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,10 +400,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CYSCORPIONS INC";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HomePwner/HomePwner-Prefix.pch";
 				INFOPLIST_FILE = "HomePwner/HomePwner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
