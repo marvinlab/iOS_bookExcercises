@@ -7,18 +7,13 @@
 //
 
 #import "BNRItemsViewController.h"
+#import "BNRDetailViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
-
 @interface BNRItemsViewController ()
 
-@property(nonatomic,strong)IBOutlet UIView *headerView;
-
 @end
-
-
-
 
 @implementation BNRItemsViewController
 
@@ -27,9 +22,20 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
+
+        // Create a new bar button item that will send
+        // addNewItem: to BNRItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                             target:self
+                                                                             action:@selector(addNewItem:)];
+
+        // Set this bar button item as the right item in the navigationItem
+        navItem.rightBarButtonItem = bbi;
+
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
-    NSLog(@"sizeof(NSInteger) = %@", @(sizeof(NSInteger)));
     return self;
 }
 
@@ -44,10 +50,13 @@
 
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
-    
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -71,74 +80,58 @@
     return cell;
 }
 
--(IBAction)addNewItem:(id)sender
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSInteger lastRow = [self.tableView numberOfRowsInSection:0];
-    
-    BNRItem *newItem = [[BNRItemStore sharedStore]createItem];
-    NSInteger lastRow = [[[BNRItemStore sharedStore]allItems]indexOfObject:newItem];
-    
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow
-                                                inSection:0];
-    
-    [self.tableView insertRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationTop];
-    
-    
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
+
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = items[indexPath.row];
+
+    // Give detail view controller a pointer to the item object in row
+    detailViewController.item = selectedItem;
+
+    // Push it onto the top of the navigation controller's stack
+    [self.navigationController pushViewController:detailViewController
+                                         animated:YES];
 }
 
--(IBAction)toggleEdittingMode:(id)sender
+- (void)   tableView:(UITableView *)tableView
+  commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+   forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(self.isEditing)
-    {
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        [self setEditing:NO animated:YES];
-        
-    }else{
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        [self setEditing:YES animated:YES];
-    }
-    
-}
-
-- (UIView *)headerView
-{
-    if(!_headerView){
-        
-        [[NSBundle mainBundle]loadNibNamed:@"HeaderView"
-                                     owner:self
-                                   options:nil];
-    }
-    
-    return _headerView;
-    
-}
-
-
-- (void) tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
- forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if(editingStyle== UITableViewCellEditingStyleDelete){
-        NSArray *items = [[BNRItemStore sharedStore]allItems];
+    // If the table view is asking to commit a delete command...
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSArray *items = [[BNRItemStore sharedStore] allItems];
         BNRItem *item = items[indexPath.row];
-        [[BNRItemStore sharedStore]removeItem:item];
-        
+        [[BNRItemStore sharedStore] removeItem:item];
+
+        // Also remove that row from the table view with an animation
         [tableView deleteRowsAtIndexPaths:@[indexPath]
                          withRowAnimation:UITableViewRowAnimationFade];
-        
     }
 }
 
-
-- (void) tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
-                                                   toIndexPath:(NSIndexPath *)destinationIndexPath
+- (void)   tableView:(UITableView *)tableView
+  moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+         toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    
     [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row
                                         toIndex:destinationIndexPath.row];
-    
 }
+
+- (IBAction)addNewItem:(id)sender
+{
+    // Create a new BNRItem and add it to the store
+    BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
+
+    // Figure out where that item is in the array
+    NSInteger lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
+
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+
+    // Insert this new row into the table.
+    [self.tableView insertRowsAtIndexPaths:@[indexPath]
+                          withRowAnimation:UITableViewRowAnimationTop];
+}
+
 @end

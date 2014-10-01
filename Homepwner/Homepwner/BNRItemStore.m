@@ -65,25 +65,23 @@
 
 - (void)removeItem:(BNRItem *)item
 {
-  
     [self.privateItems removeObjectIdenticalTo:item];
-    
 }
 
-- (void)moveItemAtIndex:(NSUInteger)fromIndex
-                toIndex:(NSUInteger)toIndex
+- (void)moveItemAtIndex:(NSInteger)fromIndex
+                toIndex:(NSInteger)toIndex
 {
-    if(fromIndex == toIndex){
+    if (fromIndex == toIndex) {
         return;
     }
-    
+    // Get pointer to object being moved so you can re-insert it
     BNRItem *item = self.privateItems[fromIndex];
-    
+
+    // Remove item from array
     [self.privateItems removeObjectAtIndex:fromIndex];
-    
+
+    // Insert item in array at new location
     [self.privateItems insertObject:item atIndex:toIndex];
-    
-    
 }
 
 @end
