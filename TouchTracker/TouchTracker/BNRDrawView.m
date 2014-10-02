@@ -49,9 +49,13 @@
         [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
         
         
+        UILongPressGestureRecognizer *pressRecognizer =
+        [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                      action:@selector(longPress:)];
+        
         [self addGestureRecognizer:doubleTapRecognizer];
         [self addGestureRecognizer:tapRecognizer];
-        
+        [self addGestureRecognizer:pressRecognizer];
         
         
     }
@@ -215,6 +219,24 @@
     CGPoint point = [gr locationInView:self];
     self.selectedLine = [self lineAtPoint:point];
     
+    
+    if (self.selectedLine) {
+        // Make ourselves the target of menu item action messages
+        [self becomeFirstResponder];
+        // Grab the menu controller
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        // Create a new "Delete" UIMenuItem
+        UIMenuItem *deleteItem = [[UIMenuItem alloc] initWithTitle:@"Delete"
+                                                            action:@selector(deleteLine:)];
+        // Tell the menu where it should come from and show it
+         menu.menuItems = @[deleteItem];
+        [menu setTargetRect:CGRectMake(point.x, point.y, 2, 2) inView:self];
+        [menu setMenuVisible:YES animated:YES];
+    } else {
+        // Hide the menu if no line is selected
+        [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
+    }
+    
     [self setNeedsDisplay];
     
 }
@@ -239,6 +261,34 @@
         }
     }
     return nil;
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)deleteLine:(id)sender
+{
+    // Remove the selected line from the list of finishedLines
+    [self.finishedLines removeObject:self.selectedLine];
+    // Redraw everything
+    [self setNeedsDisplay];
+}
+
+
+- (void)longPress:(UIGestureRecognizer *)gr
+{
+    if (gr.state == UIGestureRecognizerStateBegan) {
+        CGPoint point = [gr locationInView:self];
+        self.selectedLine = [self lineAtPoint:point];
+        if (self.selectedLine) {
+            [self.linesInProgress removeAllObjects];
+        }
+    } else if (gr.state == UIGestureRecognizerStateEnded) {
+        self.selectedLine = nil;
+    }
+    [self setNeedsDisplay];
 }
 
 @end
