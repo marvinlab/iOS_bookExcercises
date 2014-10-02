@@ -15,6 +15,8 @@
 @property(nonatomic,strong) NSMutableDictionary *linesInProgress;
 @property(nonatomic,strong) NSMutableArray *finishedLines;
 
+@property(nonatomic, weak) BNRLine *selectedLine;
+
 @end
 
 
@@ -44,6 +46,7 @@
         
         
         tapRecognizer.delaysTouchesBegan = YES;
+        [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
         
         
         [self addGestureRecognizer:doubleTapRecognizer];
@@ -84,6 +87,11 @@
         [self strokeLine:self.linesInProgress[key]];
     }
 
+    
+    if (self.selectedLine) {
+        [[UIColor greenColor]set];
+        [self strokeLine:self.selectedLine];
+    }
     
     
 }
@@ -204,6 +212,33 @@
     
     NSLog(@"Recognized Tap!");
     
+    CGPoint point = [gr locationInView:self];
+    self.selectedLine = [self lineAtPoint:point];
+    
+    [self setNeedsDisplay];
+    
+}
+
+
+
+- (BNRLine *)lineAtPoint:(CGPoint)p
+{
+    
+    for (BNRLine *l in self.finishedLines) {
+        CGPoint start = l.begin;
+        CGPoint end = l.end;
+        
+        
+        for (float t = 0.0; t<= 10; t+=0.05) {
+            float x = start.x + t * (end.x - start.x);
+            float y = start.y + t * (end.y - start.y);
+            
+            if (hypot(x-p.x, y-p.y) < 20.0){
+                return l;
+            }
+        }
+    }
+    return nil;
 }
 
 @end
