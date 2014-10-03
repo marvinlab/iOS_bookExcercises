@@ -40,15 +40,13 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    BOOL success = [[BNRItemStore sharedStore]saveChanges];
-    if (success){
-        
-        NSLog(@"Saved All of the BNR Items");
-    }else{
-        NSLog(@"Could Not Save any of the BNR Items");
+    BOOL success = [[BNRItemStore sharedStore] saveChanges];
+    if (success) {
+        NSLog(@"Saved all of the BNRItems");
+    } else {
+        NSLog(@"Could not save any of the BNRItems");
     }
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
@@ -64,6 +62,5 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 
 @end

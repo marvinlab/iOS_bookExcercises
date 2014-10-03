@@ -25,6 +25,9 @@
 		520AA4BF187C87C50048F174 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4BD187C87C50048F174 /* BNRDetailViewController.m */; };
 		520AA4C0187C87C50048F174 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AA4BE187C87C50048F174 /* BNRDetailViewController.xib */; };
 		520AA4C3187CAA690048F174 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4C2187CAA690048F174 /* BNRImageStore.m */; };
+		520AA4C9187E3DB20048F174 /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4C8187E3DB20048F174 /* BNRItemCell.m */; };
+		520AA4CB187E42150048F174 /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AA4CA187E42150048F174 /* BNRItemCell.xib */; };
+		520AA4CE187E47050048F174 /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4CD187E47050048F174 /* BNRImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,11 @@
 		520AA4BE187C87C50048F174 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
 		520AA4C1187CAA690048F174 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		520AA4C2187CAA690048F174 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
+		520AA4C7187E3DB20048F174 /* BNRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemCell.h; sourceTree = "<group>"; };
+		520AA4C8187E3DB20048F174 /* BNRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemCell.m; sourceTree = "<group>"; };
+		520AA4CA187E42150048F174 /* BNRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemCell.xib; sourceTree = "<group>"; };
+		520AA4CC187E47050048F174 /* BNRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageViewController.h; sourceTree = "<group>"; };
+		520AA4CD187E47050048F174 /* BNRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,11 @@
 				520AA4C2187CAA690048F174 /* BNRImageStore.m */,
 				520AA4AD187C4EF00048F174 /* BNRItemsViewController.h */,
 				520AA4AE187C4EF00048F174 /* BNRItemsViewController.m */,
+				520AA4C7187E3DB20048F174 /* BNRItemCell.h */,
+				520AA4C8187E3DB20048F174 /* BNRItemCell.m */,
+				520AA4CA187E42150048F174 /* BNRItemCell.xib */,
+				520AA4CC187E47050048F174 /* BNRImageViewController.h */,
+				520AA4CD187E47050048F174 /* BNRImageViewController.m */,
 				520AA4BC187C87C50048F174 /* BNRDetailViewController.h */,
 				520AA4BD187C87C50048F174 /* BNRDetailViewController.m */,
 				520AA4BE187C87C50048F174 /* BNRDetailViewController.xib */,
@@ -249,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520AA4C0187C87C50048F174 /* BNRDetailViewController.xib in Resources */,
+				520AA4CB187E42150048F174 /* BNRItemCell.xib in Resources */,
 				520AA489187C4EC00048F174 /* InfoPlist.strings in Resources */,
 				520AA491187C4EC00048F174 /* Images.xcassets in Resources */,
 			);
@@ -270,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				520AA4BF187C87C50048F174 /* BNRDetailViewController.m in Sources */,
+				520AA4C9187E3DB20048F174 /* BNRItemCell.m in Sources */,
+				520AA4CE187E47050048F174 /* BNRImageViewController.m in Sources */,
 				520AA4B5187C4FC00048F174 /* BNRItemStore.m in Sources */,
 				520AA4C3187CAA690048F174 /* BNRImageStore.m in Sources */,
 				520AA4AF187C4EF00048F174 /* BNRItemsViewController.m in Sources */,
