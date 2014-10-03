@@ -10,4 +10,11 @@
 
 @interface BNRDrawViewController : UIViewController
 
+
+//+ (NSArray *)constraintsWithVisualFormat: (NSString *)format
+//                                 options: (NSLayoutFormatOptions *)opts
+//                                 metrics:(NSDictionary *)metrics
+//                                   views:(NSDictionary *)views;
+
+
 @end

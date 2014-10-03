@@ -277,65 +277,70 @@
 
 - (void)deleteLine:(id)sender
 {
-    // Remove the selected line from the list of finishedLines
-    [self.finishedLines removeObject:self.selectedLine];
-    // Redraw everything
-    [self setNeedsDisplay];
+   
+        [self.finishedLines removeObject:self.selectedLine];
+ 
+        [self setNeedsDisplay];
 }
 
 
 - (void)longPress:(UIGestureRecognizer *)gr
 {
-    if (gr.state == UIGestureRecognizerStateBegan) {
-        CGPoint point = [gr locationInView:self];
-        self.selectedLine = [self lineAtPoint:point];
-        if (self.selectedLine) {
-            [self.linesInProgress removeAllObjects];
+        if (gr.state == UIGestureRecognizerStateBegan) {
+                CGPoint point = [gr locationInView:self];
+                self.selectedLine = [self lineAtPoint:point];
+            
+                if (self.selectedLine) {
+                        [self.linesInProgress removeAllObjects];
+                }
+            
+        } else if (gr.state == UIGestureRecognizerStateEnded) {
+                self.selectedLine = nil;
         }
-    } else if (gr.state == UIGestureRecognizerStateEnded) {
-        self.selectedLine = nil;
-    }
-    [self setNeedsDisplay];
+    
+        [self setNeedsDisplay];
 }
 
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)other
 {
-    if (gestureRecognizer == self.moveRecognizer) {
-        return YES;
-    }
-    return NO;
+        if (gestureRecognizer == self.moveRecognizer) {
+                return YES;
+        }
+    
+        return NO;
 }
 
 
 - (void)moveLine:(UIPanGestureRecognizer *)gr
 {
-    // If we have not selected a line, we do not do anything here
-    if (!self.selectedLine) {
-        return; }
-    // When the pan recognizer changes its position...
-    if (gr.state == UIGestureRecognizerStateChanged) {
-        // How far has the pan moved?
-        CGPoint translation = [gr translationInView:self];
-        // Add the translation to the current beginning and end points of the line
-        CGPoint begin = self.selectedLine.begin;
-        CGPoint end = self.selectedLine.end;
-        begin.x += translation.x;
-        begin.y += translation.y;
-        end.x += translation.x;
-        end.y += translation.y;
-        // Set the new beginning and end points of the line
-        self.selectedLine.begin = begin;
-        self.selectedLine.end = end;
+    
+        if (!self.selectedLine) {
+                return;
+        }
+   
+        if (gr.state == UIGestureRecognizerStateChanged) {
+        
+                CGPoint translation = [gr translationInView:self];
+        
+                CGPoint begin = self.selectedLine.begin;
+                CGPoint end = self.selectedLine.end;
+                begin.x += translation.x;
+                begin.y += translation.y;
+                end.x += translation.x;
+                end.y += translation.y;
+        
+                self.selectedLine.begin = begin;
+                self.selectedLine.end = end;
      
         
-        // Redraw the screen
-        [self setNeedsDisplay];
+        
+                [self setNeedsDisplay];
     
-        [gr setTranslation:CGPointZero inView:self];
+                [gr setTranslation:CGPointZero inView:self];
     
-    }
+        }
 }
 
 @end
