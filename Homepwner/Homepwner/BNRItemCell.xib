@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="6vw-ex-uyp"/>
-                            <constraint firstAttribute="width" constant="40" id="Cwm-LV-17R"/>
+                            <constraint firstAttribute="width" constant="40" placeholder="YES" id="Cwm-LV-17R"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvw-B7-5r0">
@@ -56,11 +56,11 @@
                     <constraint firstItem="zY8-At-nMq" firstAttribute="leading" secondItem="lvw-B7-5r0" secondAttribute="trailing" constant="8" id="1nX-lY-Ozg"/>
                     <constraint firstItem="lvw-B7-5r0" firstAttribute="leading" secondItem="phN-K5-AWT" secondAttribute="trailing" constant="7" id="5t8-h6-URa"/>
                     <constraint firstAttribute="centerY" secondItem="zY8-At-nMq" secondAttribute="centerY" id="Ccl-p1-oh7"/>
+                    <constraint firstAttribute="bottom" secondItem="ho0-H5-Zfw" secondAttribute="bottom" constant="1" id="Lgc-bY-npC"/>
                     <constraint firstAttribute="trailing" secondItem="zY8-At-nMq" secondAttribute="trailing" constant="20" id="MX2-LY-qrW"/>
                     <constraint firstAttribute="centerY" secondItem="phN-K5-AWT" secondAttribute="centerY" constant="-0.5" id="N3g-l2-ib2"/>
                     <constraint firstItem="phN-K5-AWT" firstAttribute="leading" secondItem="WVu-YE-TEE" secondAttribute="leading" id="PCM-EQ-Kkz"/>
                     <constraint firstItem="ho0-H5-Zfw" firstAttribute="leading" secondItem="phN-K5-AWT" secondAttribute="trailing" constant="7" id="WI1-3h-Eh5"/>
-                    <constraint firstItem="ho0-H5-Zfw" firstAttribute="top" secondItem="lvw-B7-5r0" secondAttribute="bottom" constant="2" id="XlI-YD-C7l"/>
                     <constraint firstItem="lvw-B7-5r0" firstAttribute="trailing" secondItem="ho0-H5-Zfw" secondAttribute="trailing" id="exB-9N-JCe"/>
                     <constraint firstItem="phN-K5-AWT" firstAttribute="trailing" secondItem="WVu-YE-TEE" secondAttribute="trailing" id="kz1-iz-9lK"/>
                     <constraint firstItem="phN-K5-AWT" firstAttribute="leading" secondItem="qhx-j6-gKT" secondAttribute="leading" constant="2" id="rNq-MN-ud2"/>
@@ -70,6 +70,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imageViewHeightConstraint" destination="6vw-ex-uyp" id="2M5-jL-OUK"/>
                 <outlet property="nameLabel" destination="lvw-B7-5r0" id="Dyh-B0-JSC"/>
                 <outlet property="serialNumberLabel" destination="ho0-H5-Zfw" id="pqd-4j-wNl"/>
                 <outlet property="thumbnailView" destination="phN-K5-AWT" id="Utm-r8-dJX"/>
