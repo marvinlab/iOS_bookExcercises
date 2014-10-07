@@ -10,6 +10,7 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
+#import "BNRAssetTypeViewController.h"
 
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate,
     UITextFieldDelegate, UIPopoverControllerDelegate>
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
@@ -29,6 +31,7 @@
 
 - (IBAction)takePicture:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
+- (IBAction)showAssetTypePicker:(id)sender;
 
 @end
 
@@ -153,6 +156,13 @@
         self.imageView.image = nil;
     }
 
+    NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
+    if (!typeLabel) {
+        typeLabel = @"None";
+    }
+
+    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
+
     [self updateFonts];
 }
 
@@ -268,6 +278,17 @@
 - (IBAction)backgroundTapped:(id)sender
 {
     [self.view endEditing:YES];
+}
+
+- (IBAction)showAssetTypePicker:(id)sender
+{
+    [self.view endEditing:YES];
+
+    BNRAssetTypeViewController *avc = [[BNRAssetTypeViewController alloc] init];
+    avc.item = self.item;
+
+    [self.navigationController pushViewController:avc
+                                         animated:YES];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker

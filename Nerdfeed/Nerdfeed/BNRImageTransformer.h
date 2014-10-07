@@ -1,5 +1,5 @@
 //
-//  BNRWebViewController.h
+//  BNRImageTransformer.h
 //  Nerdfeed
 //
 //  Created by Marvin Labrador on 10/7/14.
@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BNRWebViewController : UIViewController <UISplitViewControllerDelegate>
-
-@property(nonatomic)NSURL *URL;
+@interface BNRImageTransformer : NSValueTransformer
 
 @end

@@ -20,6 +20,9 @@
 		FA8C777B19DEB87E00B0B2DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA8C777919DEB87E00B0B2DB /* InfoPlist.strings */; };
 		FA8C777D19DEB87E00B0B2DB /* NerdfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C777C19DEB87E00B0B2DB /* NerdfeedTests.m */; };
 		FA8C778819DEB89E00B0B2DB /* BNRCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8C778719DEB89E00B0B2DB /* BNRCoursesViewController.m */; };
+		FABF3CF719E3BD7300ACEDCD /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FABF3CF519E3BD7300ACEDCD /* Homepwner.xcdatamodeld */; };
+		FABF3CFA19E3BECC00ACEDCD /* BNRImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FABF3CF919E3BECC00ACEDCD /* BNRImageTransformer.m */; };
+		FABF3D0019E3C3C600ACEDCD /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FABF3CFF19E3C3C600ACEDCD /* BNRItem.m */; };
 		FAC4950219E37CCC00E217C6 /* BNRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC4950119E37CCC00E217C6 /* BNRWebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,11 @@
 		FA8C777C19DEB87E00B0B2DB /* NerdfeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NerdfeedTests.m; sourceTree = "<group>"; };
 		FA8C778619DEB89E00B0B2DB /* BNRCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRCoursesViewController.h; sourceTree = "<group>"; };
 		FA8C778719DEB89E00B0B2DB /* BNRCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRCoursesViewController.m; sourceTree = "<group>"; };
+		FABF3CF619E3BD7300ACEDCD /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
+		FABF3CF819E3BECC00ACEDCD /* BNRImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageTransformer.h; sourceTree = "<group>"; };
+		FABF3CF919E3BECC00ACEDCD /* BNRImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageTransformer.m; sourceTree = "<group>"; };
+		FABF3CFE19E3C3C600ACEDCD /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		FABF3CFF19E3C3C600ACEDCD /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		FAC4950019E37CCC00E217C6 /* BNRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRWebViewController.h; sourceTree = "<group>"; };
 		FAC4950119E37CCC00E217C6 /* BNRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,10 +123,15 @@
 			children = (
 				FA8C776619DEB87E00B0B2DB /* BNRAppDelegate.h */,
 				FA8C776719DEB87E00B0B2DB /* BNRAppDelegate.m */,
+				FABF3CF819E3BECC00ACEDCD /* BNRImageTransformer.h */,
+				FABF3CF919E3BECC00ACEDCD /* BNRImageTransformer.m */,
 				FA8C778619DEB89E00B0B2DB /* BNRCoursesViewController.h */,
 				FA8C778719DEB89E00B0B2DB /* BNRCoursesViewController.m */,
 				FAC4950019E37CCC00E217C6 /* BNRWebViewController.h */,
 				FAC4950119E37CCC00E217C6 /* BNRWebViewController.m */,
+				FABF3CF519E3BD7300ACEDCD /* Homepwner.xcdatamodeld */,
+				FABF3CFE19E3C3C600ACEDCD /* BNRItem.h */,
+				FABF3CFF19E3C3C600ACEDCD /* BNRItem.m */,
 				FA8C776919DEB87E00B0B2DB /* Images.xcassets */,
 				FA8C775E19DEB87E00B0B2DB /* Supporting Files */,
 			);
@@ -254,6 +267,9 @@
 				FA8C776419DEB87E00B0B2DB /* main.m in Sources */,
 				FA8C776819DEB87E00B0B2DB /* BNRAppDelegate.m in Sources */,
 				FA8C778819DEB89E00B0B2DB /* BNRCoursesViewController.m in Sources */,
+				FABF3D0019E3C3C600ACEDCD /* BNRItem.m in Sources */,
+				FABF3CFA19E3BECC00ACEDCD /* BNRImageTransformer.m in Sources */,
+				FABF3CF719E3BD7300ACEDCD /* Homepwner.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +393,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerdfeed/Nerdfeed-Prefix.pch";
 				INFOPLIST_FILE = "Nerdfeed/Nerdfeed-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,7 +409,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nerdfeed/Nerdfeed-Prefix.pch";
 				INFOPLIST_FILE = "Nerdfeed/Nerdfeed-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -467,6 +487,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FABF3CF519E3BD7300ACEDCD /* Homepwner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FABF3CF619E3BD7300ACEDCD /* Homepwner.xcdatamodel */,
+			);
+			currentVersion = FABF3CF619E3BD7300ACEDCD /* Homepwner.xcdatamodel */;
+			path = Homepwner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA8C774C19DEB87D00B0B2DB /* Project object */;
 }
